@@ -29,6 +29,10 @@ describe "Authentication" do
         click_button "Sign in"
       end
 
+       describe "followed by signout" do
+        before { click_link "Sign out" }
+        it { should have_link('Sign in') }
+         
       it { should have_title(user.name) }
       it { should have_link('Profile',     href: user_path(user)) }
       it { should have_link('Sign out',    href: signout_path) }

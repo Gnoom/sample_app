@@ -24,5 +24,9 @@ class User < ActiveRecord::Base
       self.remember_token = User.encrypt(User.new_remember_token)
     end
   
+   def current_user=(user)
+    @current_user = user
+  end
+  
 end
 "Make a basic User model (including secure passwords)"
